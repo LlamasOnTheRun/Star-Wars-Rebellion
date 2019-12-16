@@ -1,0 +1,29 @@
+.game_title
+{
+  background-color: black;
+  margin-top: 20vh !important;
+}
+
+.space_background
+{
+  position: absolute;
+  background-image: url("./../images/Space-Background.png");
+  width: 100%;
+  min-height: 100vh;
+}
+
+.button_display
+{
+  background-color: #333533;
+  height: 5vh;
+  width: 30vh;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10% !important;
+}
+
+.center {
+  display: block;
+  margin: auto;
+}
