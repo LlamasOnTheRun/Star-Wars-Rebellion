@@ -8,42 +8,29 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { Welcome } from './components/game_start';
 
 function App() {
   return (
     <Router>
+      {/*<nav>
+        <Link to="/" component={Welcome}>Start a game</Link>
+        <Link to="/about" component={Home}>Settings</Link>
+      </nav>*/}
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Start a game</Link>
-            </li>
-            <li>
-              <Link to="/about">Settings</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Route exact path="/">
+          <Welcome />
+        </Route>
+        <Route path="/news">
+          <Home />
+        </Route>
       </div>
     </Router>
   );
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2>Hom1e</h2>;
 }
 
 function About() {
