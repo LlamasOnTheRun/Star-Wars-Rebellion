@@ -1,0 +1,58 @@
+#sector_1.sector
+{
+  position: fixed;
+  background-color: blue;
+}
+
+#sector_2.sector
+{
+  left: 40vw;
+  position: fixed;
+  background-color: yellow;
+}
+
+#sector_3.sector
+{
+  left: 80vw;
+  position: fixed;
+  background-color: purple;
+}
+
+#sector_4.sector
+{
+  left: 80vw;
+  top: 60vh;
+  position: fixed;
+  background-color: green;
+}
+
+#sector_5.sector
+{
+  left: 40vw;
+  top: 60vh;
+  position: fixed;
+  background-color: red;
+}
+
+#sector_6.sector
+{
+  top: 60vh;
+  position: fixed;
+  background-color: #7ac82f;
+}
+
+#sector_7.sector
+{
+  top: 30vh;
+  left: 60vw;
+  position: fixed;
+  background-color: brown;
+}
+
+#sector_8.sector
+{
+  top: 30vh;
+  left: 20vw;
+  position: fixed;
+  background-color: #e275ff;
+}
