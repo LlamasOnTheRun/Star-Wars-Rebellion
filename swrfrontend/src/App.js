@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import { Welcome } from './components/game_start';
+import { SectorsAndPlanets } from './components/sectors_and_planets';
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
         <Route exact path="/">
           <Welcome />
         </Route>
-        <Route path="/news">
-          <Home />
+        <Route path="/test">
+          <SectorsAndPlanets />
         </Route>
       </div>
     </Router>
