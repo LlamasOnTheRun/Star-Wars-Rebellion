@@ -272,6 +272,124 @@
   top: 2vh;
   left: 0vw;
 }
+
+#mustafar.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  top: 2vh;
+  left: 15vw;
+}
+
+#bespin.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  top: 2vh;
+  left: 0vw;
+}
+
+#endor.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  bottom: 2vh;
+  left: 0vw;
+}
+
+#hoth.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  bottom: 2vh;
+  right: 5vw;
+}
+
+#hoth.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  bottom: 2vh;
+  right: 5vw;
+}
+
+#corusant.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  bottom: 0vh;
+  right: 10vw;
+}
+
+#alderaan.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  top: 0vh;
+  left: 0vw;
+}
+
+#cato_neimoidia.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  top: 0vh;
+  right: 0vw;
+}
+
+#corellia.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  top: 12.5vh;
+  right: 4vw;
+}
+
+#dantooine.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  top: 0vh;
+  left: 0vw;
+}
+
+#mygeeto.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  top: 15vh;
+  left: 3vw;
+}
+
+#ord_mantell.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  top: 0vh;
+  right: .5vw;
+}
+
+#ilum.planet
+{
+  position: absolute;
+  width: 15vw;
+  background-color: purple;
+  bottom: 0vh;
+  right: .5vw;
+}
+
 /* ---------------- */
 .line{
   position: absolute;

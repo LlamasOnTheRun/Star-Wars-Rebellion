@@ -74,6 +74,23 @@ componentDidMount()
   this.adjustLine(document.getElementById('geonosis'), document.getElementById('ryloth'), document.getElementById('geonosis_to_ryloth'));
 
   //sector 4 line internal
+  this.adjustLine(document.getElementById('bespin'), document.getElementById('mustafar'), document.getElementById('bespin_to_mustafar'));
+  this.adjustLine(document.getElementById('bespin'), document.getElementById('hoth'), document.getElementById('bespin_to_hoth'));
+  this.adjustLine(document.getElementById('bespin'), document.getElementById('endor'), document.getElementById('bespin_to_endor'));
+  this.adjustLine(document.getElementById('hoth'), document.getElementById('endor'), document.getElementById('hoth_to_endor'));
+  this.adjustLine(document.getElementById('mustafar'), document.getElementById('hoth'), document.getElementById('mustafar_to_hoth'));
+
+  //sector 8 line internal
+  this.adjustLine(document.getElementById('dathomir'), document.getElementById('mandalore'), document.getElementById('dathomir_to_mandalore'));
+  this.adjustLine(document.getElementById('mandalore'), document.getElementById('kashyyk'), document.getElementById('mandalore_to_kashyyk'));
+  this.adjustLine(document.getElementById('kashyyk'), document.getElementById('malastare'), document.getElementById('kashyyk_to_malastare'));
+
+  //sector 7 line internal
+  this.adjustLine(document.getElementById('naboo'), document.getElementById('sullust'), document.getElementById('naboo_to_sullust'));
+  this.adjustLine(document.getElementById('naboo'), document.getElementById('dagobah'), document.getElementById('naboo_to_dagobah'));
+  this.adjustLine(document.getElementById('naboo'), document.getElementById('utapau'), document.getElementById('naboo_to_utapah'));
+  this.adjustLine(document.getElementById('sullust'), document.getElementById('dagobah'), document.getElementById('sullust_to_dagobah'));
+  this.adjustLine(document.getElementById('utapau'), document.getElementById('dagobah'), document.getElementById('utapau_to_dagobah'));
 }
 /*adjustLine(
   document.getElementById('mon_calamari'),
@@ -201,6 +218,11 @@ componentDidMount()
           Endor
         </div>
       </div>
+      <div id="bespin_to_mustafar" className="line"></div>
+      <div id="bespin_to_hoth" className="line"></div>
+      <div id="bespin_to_endor" className="line"></div>
+      <div id="hoth_to_endor" className="line"></div>
+      <div id="mustafar_to_hoth" className="line"></div>
     </div>
     <div id="sector_5" className="sector">
       <div id="alderaan" className="planet">
@@ -254,7 +276,7 @@ componentDidMount()
         </div>
       </div>
     </div>
-    <div id="sector_7" className="sector">
+    <div id="sector_7" className="sector"> {/*TODO put lines in sector 7*/}
       <div id="utapau" className="planet">
         <button className="planetImageButton"><img width="45.0" height="45.0" src="https://vignette.wikia.nocookie.net/starwars/images/c/ce/UtapauRotS.png/revision/latest?cb=20160118063015" alt="utapau" onClick={this.myFunction} /></button>
         <div className="planetName">
@@ -279,6 +301,11 @@ componentDidMount()
           Naboo
         </div>
       </div>
+      <div id="naboo_to_sullust" className="line"></div>
+      <div id="naboo_to_dagobah" className="line"></div>
+      <div id="naboo_to_utapah" className="line"></div>
+      <div id="sullust_to_dagobah" className="line"></div>
+      <div id="utapau_to_dagobah" className="line"></div>
     </div>
     <div id="sector_8" className="sector">
       < div id="dathomir" className="planet">
@@ -305,7 +332,10 @@ componentDidMount()
           Malastare
         </div>
       </div>
-    </div>
+      <div id="dathomir_to_mandalore" className="line"></div>
+      <div id="mandalore_to_kashyyk" className="line"></div>
+      <div id="kashyyk_to_malastare" className="line"></div>
+    </div>r
   </div>
     );
   }
