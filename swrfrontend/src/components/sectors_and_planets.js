@@ -11,7 +11,11 @@ export class SectorsAndPlanets extends Component {
   }
 
   adjustLine (from, to, line) {
-    console.log("Hello you are in my adjust line")
+  
+  console.log("Hello you are in my adjust line")
+  console.log(from)
+  console.log(to)
+  console.log(line)
 
   var fT = from.offsetTop  + from.offsetHeight/2;
   var tT = to.offsetTop    + to.offsetHeight/2;
@@ -49,10 +53,7 @@ export class SectorsAndPlanets extends Component {
   line.style.height = H + 'px';
 };
 
-componentDidMount()
-{
-  console.log("Hello")
-  //sector 1 lines internal
+makeLines() {
   this.adjustLine(document.getElementById('mon_calamari'), document.getElementById('felucia'), document.getElementById('mon_calamari_to_felucia'));
   this.adjustLine(document.getElementById('mon_calamari'), document.getElementById('saleucami'), document.getElementById('mon_calamari_to_saleucami'));
   this.adjustLine(document.getElementById('mon_calamari'), document.getElementById('saleucami'), document.getElementById('mon_calamari_to_saleucami'));
@@ -80,6 +81,19 @@ componentDidMount()
   this.adjustLine(document.getElementById('hoth'), document.getElementById('endor'), document.getElementById('hoth_to_endor'));
   this.adjustLine(document.getElementById('mustafar'), document.getElementById('hoth'), document.getElementById('mustafar_to_hoth'));
 
+  //sector 5 line internal
+  this.adjustLine(document.getElementById('alderaan'), document.getElementById('cato_neimoidia'), document.getElementById('alderaan_to_cato_neimoidia'));
+  this.adjustLine(document.getElementById('alderaan'), document.getElementById('corusant'), document.getElementById('alderaan_to_corusant'));
+  this.adjustLine(document.getElementById('alderaan'), document.getElementById('corellia'), document.getElementById('alderaan_to_corellia'));
+  this.adjustLine(document.getElementById('cato_neimoidia'), document.getElementById('corellia'), document.getElementById('cato_neimoidia_to_corellia'));
+  this.adjustLine(document.getElementById('corellia'), document.getElementById('corusant'), document.getElementById('corellia_to_corusant'));
+
+  //sector 6 line interval
+  this.adjustLine(document.getElementById('dantooine'), document.getElementById('mygeeto'), document.getElementById('dantooine_to_mygeeto'));
+  this.adjustLine(document.getElementById('mygeeto'), document.getElementById('ilum'), document.getElementById('mygeeto_to_ilum'));
+  this.adjustLine(document.getElementById('mygeeto'), document.getElementById('ord_mantell'), document.getElementById('mygeeto_to_ord_mantell'));
+  this.adjustLine(document.getElementById('ord_mantell'), document.getElementById('ilum'), document.getElementById('ord_mantell_to_ilum'));
+
   //sector 8 line internal
   this.adjustLine(document.getElementById('dathomir'), document.getElementById('mandalore'), document.getElementById('dathomir_to_mandalore'));
   this.adjustLine(document.getElementById('mandalore'), document.getElementById('kashyyk'), document.getElementById('mandalore_to_kashyyk'));
@@ -91,6 +105,19 @@ componentDidMount()
   this.adjustLine(document.getElementById('naboo'), document.getElementById('utapau'), document.getElementById('naboo_to_utapah'));
   this.adjustLine(document.getElementById('sullust'), document.getElementById('dagobah'), document.getElementById('sullust_to_dagobah'));
   this.adjustLine(document.getElementById('utapau'), document.getElementById('dagobah'), document.getElementById('utapau_to_dagobah'));
+
+  //this was a test to see if lines connectes sector to secotr. sadly they do not
+  console.log("Test here")
+  this.adjustLine(document.getElementById('mygeeto'), document.getElementById('mandalore'), document.getElementById('mygeeto_to_mandalore'));
+}
+
+componentDidMount()
+{
+  console.log("Hello")
+  //sector 1 lines internal
+  this.makeLines()
+  window.addEventListener("resize", this.makeLines.bind(this));
+
 }
 /*adjustLine(
   document.getElementById('mon_calamari'),
@@ -113,6 +140,7 @@ componentDidMount()
         <div className="planetName">
           Yavin
         </div>
+        <div className="planetInfo">Hello</div>
       </div>
       <div id="felucia" className="planet">
         <button className="planetImageButton"><img width="45.0" height="45.0" src="https://vignette.wikia.nocookie.net/star-wars-extended-universe/images/a/a8/Felucia.png/revision/latest?cb=2018020419757" alt="felucia" onClick={this.myFunction} /></button>
@@ -126,10 +154,10 @@ componentDidMount()
           Saleucami
         </div>
       </div>
-    <div id="mon_calamari_to_felucia" className="line"></div>
-    <div id="mon_calamari_to_saleucami" className="line"></div>
-    <div id="felucia_to_saleucami" className="line"></div>
-    <div id="felucia_to_yavin" className="line"></div>
+      <div id="mon_calamari_to_felucia" className="line"></div>
+      <div id="mon_calamari_to_saleucami" className="line"></div>
+      <div id="felucia_to_saleucami" className="line"></div>
+      <div id="felucia_to_yavin" className="line"></div>
     </div>
     <div id="sector_2" className="sector">
       < div id="kessel" className="planet">
@@ -228,7 +256,7 @@ componentDidMount()
       <div id="alderaan" className="planet">
         <button className="planetImageButton"><img width="45.0" height="45.0" src="https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Alderaan250ppx.PNG/220px-Alderaan250ppx.PNG" alt="alderaan" onClick={this.myFunction} /></button>
         <div className="planetName">
-          Alderann
+          Alderaan
         </div>
       </div>
       < div id="cato_neimoidia" className="planet">
@@ -249,6 +277,11 @@ componentDidMount()
           Corellia
         </div>
       </div>
+      <div id="alderaan_to_cato_neimoidia" className="line"></div>
+      <div id="alderaan_to_corusant" className="line"></div>
+      <div id="alderaan_to_corellia" className="line"></div>
+      <div id="cato_neimoidia_to_corellia" className="line"></div>
+      <div id="corellia_to_corusant" className="line"></div>
     </div>
     <div id="sector_6" className="sector">
       <div id="dantooine" className="planet">
@@ -275,8 +308,12 @@ componentDidMount()
           Ilum
         </div>
       </div>
+      <div id="dantooine_to_mygeeto" className="line"></div>
+      <div id="mygeeto_to_ilum" className="line"></div>
+      <div id="mygeeto_to_ord_mantell" className="line"></div>
+      <div id="ord_mantell_to_ilum" className="line"></div>
     </div>
-    <div id="sector_7" className="sector"> {/*TODO put lines in sector 7*/}
+    <div id="sector_7" className="sector">
       <div id="utapau" className="planet">
         <button className="planetImageButton"><img width="45.0" height="45.0" src="https://vignette.wikia.nocookie.net/starwars/images/c/ce/UtapauRotS.png/revision/latest?cb=20160118063015" alt="utapau" onClick={this.myFunction} /></button>
         <div className="planetName">
@@ -335,7 +372,8 @@ componentDidMount()
       <div id="dathomir_to_mandalore" className="line"></div>
       <div id="mandalore_to_kashyyk" className="line"></div>
       <div id="kashyyk_to_malastare" className="line"></div>
-    </div>r
+    </div>
+    <div id="mygeeto_to_mandalore" className="line" style={{backgroundColor: "red", zIndex: 100}}></div>{/*TODO make lines connecting sector to sector. either hard code it or figure out the math */}
   </div>
     );
   }

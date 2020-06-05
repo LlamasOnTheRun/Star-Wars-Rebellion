@@ -94,6 +94,11 @@
 
 }
 
+.planetInfo
+{
+  float: right;
+}
+
 #mon_calamari.planet
 {
   position: absolute;
@@ -395,5 +400,16 @@
   position: absolute;
   width:10px;
   background-color:darkblue;
+  animation-name: pulseLine;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  z-index: 0;
+}
+
+@keyframes pulseLine {
+  0% {opacity: .2;}
+  50%{opacity: .7;}
+  100%{opacity: .2;}
 }
 /* ----------------- */
