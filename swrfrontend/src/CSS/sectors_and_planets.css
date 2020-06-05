@@ -1,8 +1,24 @@
+.spaceBackground
+{
+  background-image: url("https://i.ytimg.com/vi/UNOmaFs6KaY/maxresdefault.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: 0px 0px;
+  left: 0;
+  bottom:0;
+  right:0;
+  top:0;
+  position: fixed;
+  z-index: 1;
+  background-size: cover;
+  height: 160%;
+}
+
 #sector_1.sector
 {
   left: 0;
   position: fixed;
-  background-color: blue;
+  /*background-color: blue;*/
   width: 35%;
   height: 33%;
 }
@@ -11,7 +27,7 @@
 {
   left: 35vw;
   position: fixed;
-  background-color: yellow;
+  /*background-color: yellow;*/
   width: 35%;
   height: 33%;
 }
@@ -20,7 +36,7 @@
 {
   left: 70vw;
   position: fixed;
-  background-color: purple;
+  /*background-color: purple;*/
   width: 35%;
   height: 33%;
 }
@@ -30,7 +46,7 @@
   left: 70vw;
   bottom: 0;
   position: fixed;
-  background-color: green;
+  /*background-color: green;*/
   width: 35%;
   height: 33%;
 }
@@ -40,7 +56,7 @@
   left: 35vw;
   bottom: 0;
   position: fixed;
-  background-color: red;
+  /*background-color: red;*/
   width: 35%;
   height: 33%;
 }
@@ -49,7 +65,7 @@
 {
   bottom: 0vh;
   position: fixed;
-  background-color: #7ac82f;
+  /*background-color: #7ac82f;*/
   width: 35%;
   height: 33%;
 }
@@ -61,7 +77,7 @@
   transform: translatey(-50%);
   left: 67vw;
   position: fixed;
-  background-color: brown;
+  /*background-color: brown;*/
   width: 33%;
   height: 33%;
   z-index: 100;
@@ -74,7 +90,7 @@
   height: 33%;
   width: 67%;
   position: fixed;
-  background-color: #e275ff;
+  /*background-color: #e275ff;*/
 }
 
 .planetName
@@ -91,12 +107,21 @@
   padding: 0;
   border: none;
   background: none;
-
 }
 
 .planetInfo
 {
   float: right;
+  width: 75%;
+  background-color: yellow;
+  height: 100%;
+  
+}
+
+.planetNameAndVisual
+{
+  float: left;
+  clear: both;
 }
 
 #mon_calamari.planet

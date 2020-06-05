@@ -127,7 +127,8 @@ componentDidMount()
 
   render() {
     return (
-  <div>
+    <div>
+  <div className="spaceBackground">
     <div id="sector_1" className="sector">
       <div id="mon_calamari" className="planet">
         <button className="planetImageButton"><img width="45.0" height="45.0" src="https://vignette.wikia.nocookie.net/starwars/images/0/04/Dac-AORCR.png/revision/latest?cb=20170222012252" alt="mon_calamari" onClick={this.myFunction} /></button>
@@ -135,12 +136,21 @@ componentDidMount()
           Mon Calamari
         </div>
       </div>
-      <div id="yavin" className="planet">
+      <div id="yavin" className="planet"> {/*Using this as a test template to count num of units and planet info*/}
+      <div className="planetNameAndVisual">
         <button className="planetImageButton"><img width="45.0" height="45.0" src="https://vignette.wikia.nocookie.net/starwars/images/d/d6/YavinPrime-AORCR.png/revision/latest/top-crop/width/360/height/450?cb=20170222012413" alt="yavin" onClick={this.myFunction} /></button>
         <div className="planetName">
           Yavin
         </div>
-        <div className="planetInfo">Hello</div>
+      </div>
+      <div className="planetInfo">
+        <div className="buttonInfoSelection">
+          <button className="infoButtons">Occupation Status</button>
+          <button className="infoButtons">Production Yeild</button>
+          <button className="infoButtons">Leaders</button>
+          <button className="infoButtons">Combat Forces</button>
+        </div>
+      </div>
       </div>
       <div id="felucia" className="planet">
         <button className="planetImageButton"><img width="45.0" height="45.0" src="https://vignette.wikia.nocookie.net/star-wars-extended-universe/images/a/a8/Felucia.png/revision/latest?cb=2018020419757" alt="felucia" onClick={this.myFunction} /></button>
@@ -374,6 +384,7 @@ componentDidMount()
       <div id="kashyyk_to_malastare" className="line"></div>
     </div>
     <div id="mygeeto_to_mandalore" className="line" style={{backgroundColor: "red", zIndex: 100}}></div>{/*TODO make lines connecting sector to sector. either hard code it or figure out the math */}
+  </div>
   </div>
     );
   }
