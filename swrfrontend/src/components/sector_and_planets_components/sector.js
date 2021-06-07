@@ -9,10 +9,14 @@ export class Sector extends Component {
     super(props);
   }
 
-  componentDidMount()
-  {
-      console.log("Hey, you are in a sector component");
-      //TODO make backend and database to easily import planets and sectors dynamically
+  componentDidMount() {
+      //console.log("Hey, you are in a sector component");
+  }
+
+  transformIDToName(id) {
+    var planetName = id.split('_');
+    planetName = this.toCamelCase(planetName);
+    return planetName;
   }
 
   toCamelCase(inputArray) {
@@ -26,12 +30,6 @@ export class Sector extends Component {
     }
     return result;
 }
-
-  transformIDToName(id) {
-    var planetName = id.split('_');
-    planetName = this.toCamelCase(planetName);
-    return planetName;
-  }
 
     render() {
       return (

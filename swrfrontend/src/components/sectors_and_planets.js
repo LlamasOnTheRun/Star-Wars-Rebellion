@@ -6,6 +6,18 @@ import './../CSS/sectors_and_planets.css';
 
 export class SectorsAndPlanets extends Component {
 
+  componentDidMount()
+  {
+    //sector 1 lines internal
+    this.getPlanetData();
+    this.makeLines();
+    window.addEventListener("resize", this.makeLines.bind(this));
+
+  }
+  getPlanetData() {
+    console.log("We are gonna get the data for the planets here");
+  }
+
   myFunction = (e) => {
     let a = e.currentTarget.parentNode.parentNode.getAttribute("id");
     console.log("You choose the planet of " + a)
@@ -13,10 +25,10 @@ export class SectorsAndPlanets extends Component {
 
   adjustLine (from, to, line) {
 
-  console.log("Hello you are in my adjust line")
-  console.log(from)
+  //console.log("Hello you are in my adjust line")
+  /*console.log(from)
   console.log(to)
-  console.log(line)
+  console.log(line)*/
 
   var fT = from.offsetTop  + from.offsetHeight/2;
   var tT = to.offsetTop    + to.offsetHeight/2;
@@ -111,20 +123,6 @@ makeLines() {
   console.log("Test here")
   this.adjustLine(document.getElementById('mygeeto'), document.getElementById('mandalore'), document.getElementById('mygeeto_to_mandalore'));
 }
-
-componentDidMount()
-{
-  console.log("Hello")
-  //sector 1 lines internal
-  this.makeLines()
-  window.addEventListener("resize", this.makeLines.bind(this));
-
-}
-/*adjustLine(
-  document.getElementById('mon_calamari'),
-  document.getElementById('felucia'),
-  document.getElementById('line')
-);*/
 
   render() {
     return (
