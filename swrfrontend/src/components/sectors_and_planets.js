@@ -4,6 +4,8 @@ import React, {
 import {Sector} from './sector_and_planets_components/sector.js';
 import './../CSS/sectors_and_planets.css';
 
+const axios = require('axios');
+
 export class SectorsAndPlanets extends Component {
 
   componentDidMount()
@@ -15,7 +17,20 @@ export class SectorsAndPlanets extends Component {
 
   }
   getPlanetData() {
-    console.log("We are gonna get the data for the planets here");
+    axios({
+      method: 'get',
+      url: 'http://localhost:8082/getAllRegionsWithPlanets',
+      headers: { "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "application/json" }
+    })
+    .then(function (response) {
+      console.log("Displaying response for all planet data");
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   myFunction = (e) => {

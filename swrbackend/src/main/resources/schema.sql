@@ -13,15 +13,14 @@ create table if not exists Planet (
     discriminator varchar(25)
 );
 
-create table if not exists System (
-    system_id int PRIMARY KEY not null
-);
+--create table if not exists System (
+--    system_id int PRIMARY KEY not null
+--);
 
-create table if not exists SystemsWithPlanets (
-    system_id int,
-    name varchar(25),
-    FOREIGN KEY(system_id) REFERENCES System(system_id),
-    FOREIGN KEY(name) REFERENCES Planet(name)
+create table if not exists RegionsWithPlanets (
+    region_id int not null,
+    planet_name varchar(25),
+    FOREIGN KEY(planet_name) REFERENCES Planet(name)
 );
 
 create table if not exists Leader (
