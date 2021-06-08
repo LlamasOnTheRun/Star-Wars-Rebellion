@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
@@ -13,9 +14,12 @@ import javax.persistence.*;
         discriminatorType=DiscriminatorType.STRING
 )
 @DiscriminatorValue(value="P" )
-public class Planet {
+public class Planet implements Serializable {
     @Id
     private String name; // name of the planet
+
+    @Column
+    private String region_id;
 
     @Column
     private String loyalty; // S = Subjugated, I = Imperial, R = Rebel, N = Neutral, Null = Remote

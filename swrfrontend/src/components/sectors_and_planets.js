@@ -8,6 +8,13 @@ const axios = require('axios');
 
 export class SectorsAndPlanets extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      planetData: null
+    };
+  }
+
   componentDidMount()
   {
     //sector 1 lines internal
@@ -16,21 +23,29 @@ export class SectorsAndPlanets extends Component {
     window.addEventListener("resize", this.makeLines.bind(this));
 
   }
-  getPlanetData() {
+
+  getPlanetData = () => {
     axios({
       method: 'get',
-      url: 'http://localhost:8082/getAllRegionsWithPlanets',
+      url: 'http://localhost:8082/getAllPlanets',
       headers: { "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "application/json" }
     })
-    .then(function (response) {
+    .then((response) => {
       console.log("Displaying response for all planet data");
-      console.log(response);
+      /*this.setState({
+        planetData: response.data
+      })*/
+      this.makeSpaceBoard(response.data)
     })
     .catch(function (error) {
       console.log(error);
     });
+  }
+
+  makeSpaceBoard = (planetData) => {
+    console.log(planetData)
   }
 
   myFunction = (e) => {

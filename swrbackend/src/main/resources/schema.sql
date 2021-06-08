@@ -1,5 +1,6 @@
 create table if not exists Planet (
     name varchar(25) PRIMARY KEY not null,
+    region_id int not null,
     loyalty varchar(25),
     remote BOOLEAN not null,
     light_land_production int not null,
@@ -16,12 +17,6 @@ create table if not exists Planet (
 --create table if not exists System (
 --    system_id int PRIMARY KEY not null
 --);
-
-create table if not exists RegionsWithPlanets (
-    region_id int not null,
-    planet_name varchar(25),
-    FOREIGN KEY(planet_name) REFERENCES Planet(name)
-);
 
 create table if not exists Leader (
     name varchar(25) PRIMARY KEY not null,
